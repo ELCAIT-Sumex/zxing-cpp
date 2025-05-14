@@ -6,6 +6,7 @@
 #import "ReadBarcode.h"
 #import "ImageView.h"
 #import "Barcode.h"
+#import "Content.h"
 #import "GTIN.h"
 #import "ZXIFormatHelper.h"
 #import "ZXIPosition+Helper.h"
@@ -139,7 +140,9 @@ ZXIGTIN *getGTIN(const Result &result) {
                           sequenceId:stringToNSString(result.sequenceId())
                           readerInit:result.readerInit()
                            lineCount:result.lineCount()
-                                gtin:getGTIN(result)]
+                                gtin:getGTIN(result)
+                             version:stringToNSString(result.version())
+                         contentType:stringToNSString(ToString(result.contentType()))]
              ];
         }
         return zxiResults;

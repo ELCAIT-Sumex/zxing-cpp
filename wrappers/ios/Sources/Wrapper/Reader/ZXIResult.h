@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) BOOL readerInit;
 @property(nonatomic) NSInteger lineCount;
 @property(nonatomic, strong) ZXIGTIN *gtin;
+@property(nonatomic, strong) NSString *version;
+@property(nonatomic, strong) NSString *contentType;
+
 
 - (instancetype)init:(NSString *)text
               format:(ZXIFormat)format
@@ -36,7 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
           sequenceId:(NSString *)sequenceId
           readerInit:(BOOL)readerInit
            lineCount:(NSInteger)lineCount
-                gtin:(ZXIGTIN *)gtin;
+                gtin:(ZXIGTIN *)gtin
+			 version:(NSString *)version
+		 contentType:(NSString*)contentType;
 @end
 
 NS_ASSUME_NONNULL_END
